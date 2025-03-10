@@ -1,0 +1,40 @@
+---
+// BackgroundSection.astro - Componente genérico para el fondo
+---
+
+<section class="bg-section">
+    <slot />
+</section>
+
+<style>
+    .bg-section {
+        background-image: url("FONDO.png");
+        background-position: center center;
+        background-repeat: repeat;
+        background-size: 100%;
+        background-attachment: fixed;
+        min-height: 100vh;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        padding: 2rem;
+        color: white;
+        font-family: "Alte Haas Grotesk", sans-serif;
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        overflow-y: auto;
+    }
+
+    @media (max-width: 768px) {
+        .bg-section {
+            padding: 1rem;
+            background-size: auto 100%;
+            background-position: center;
+        }
+    }
+</style>

@@ -1,0 +1,81 @@
+---
+import BackgroundSection from "../components/BackgroundSection.astro";
+import ProductShowcase from "../components/ProductShowcase.astro";
+import TitleLogo from "../components/TitleLogo.astro";
+import Layout from "../layouts/Layout.astro";
+---
+
+<Layout>
+	<BackgroundSection>
+		<div class="page-content">
+			<TitleLogo />
+			<ProductShowcase />
+			<div class="product-text">ESTE PRODUCTO ES ORIGINAL</div>
+			<div class="social-icons">
+				<a href="https://inneditclub.com/password" class="social-icon">
+					<img src="SITIO_WEB.png" alt="Website" />
+				</a>
+				<a href="https://www.tiktok.com/@inneditmx" class="social-icon">
+					<img src="tiktok.png" alt="TikTok" />
+				</a>
+				<a href="https://www.instagram.com/innedit.mx/" class="social-icon">
+					<img src="INSTA.png" alt="Instagram" />
+				</a>
+			</div>
+		</div>
+	</BackgroundSection>
+</Layout>
+
+<style>
+	.page-content {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: space-between;
+		min-height: 80vh;
+		padding: 2rem 0;
+		width: 100%;
+	}
+
+	.product-text {
+		font-size: 1.5rem;
+		font-weight: bold;
+		letter-spacing: 1px;
+		margin-top: 1rem;
+		text-align: center;
+		background-color: rgba(0, 0, 0, 0.5);
+		padding: 0.5rem 1.5rem;
+		border-radius: 4px;
+	}
+
+	.social-icons {
+		display: flex;
+		gap: 2rem;
+		margin-top: 2rem;
+	}
+
+	.social-icon img {
+		width: 80px;
+		height: 80px;
+		transition: transform 0.3s ease;
+	}
+
+	.social-icon:hover img {
+		transform: scale(1.2);
+	}
+
+	@media (max-width: 768px) {
+		.product-text {
+			font-size: 1.2rem;
+		}
+
+		.social-icon img {
+			width: 60px;
+			height: 60px;
+		}
+
+		.social-icons {
+			gap: 1.5rem;
+		}
+	}
+</style>

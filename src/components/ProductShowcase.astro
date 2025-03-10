@@ -1,0 +1,58 @@
+---
+// ProductShowcase.astro - Componente para mostrar la gorra con verificación
+---
+
+<div class="product-showcase">
+    <div class="image-container">
+        <img
+            src="UTOPIAGORRAPRUEBA.png"
+            alt="Gorra Utopia"
+            class="product-image"
+        />
+        <img
+            src="VERIFICADO.png"
+            alt="Verificado"
+            class="verified-badge"
+        />
+    </div>
+</div>
+
+<style>
+    .product-showcase {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .image-container {
+        position: relative;
+        max-width: 100%;
+        display: flex;
+        justify-content: center;
+    }
+
+    .product-image {
+        max-width: 400px;
+        height: auto;
+        border-radius: 10px;
+    }
+
+    .verified-badge {
+        position: absolute;
+        top: 5px;
+        right: 10px;
+        width: 100px;
+        height: auto;
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+        .product-image {
+            max-width: 300px;
+        }
+
+        .verified-badge {
+            width: 70px;
+        }
+    }
+</style>

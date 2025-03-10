@@ -1,0 +1,42 @@
+---
+
+---
+
+<!doctype html>
+<html lang="es">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>INNEDIT - MURATRAVIS UTOPIA</title>
+		<style>
+			@font-face {
+				font-family: "Alte Haas Grotesk";
+				src: url("public/fonts/AlteHaasGroteskRegular.ttf")
+					format("truetype");
+				font-weight: normal;
+				font-style: normal;
+			}
+
+			@font-face {
+				font-family: "Alte Haas Grotesk";
+				src: url("/src/public/fonts/AlteHaasGroteskBold.ttf")
+					format("truetype");
+				font-weight: bold;
+				font-style: normal;
+			}
+
+			body,
+			html {
+				margin: 0;
+				padding: 0;
+				height: 100%;
+				width: 100%;
+				overflow-x: hidden;
+				background-color: black; /* Añadir fondo negro para evitar espacios blancos */
+			}
+		</style>
+	</head>
+	<body>
+		<slot />
+	</body>
+</html>

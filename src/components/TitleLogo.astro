@@ -1,0 +1,44 @@
+---
+// TitleLogo.astro - Componente para mostrar el logo de título
+---
+
+<div class="title-logo">
+    <img src="innedit_logo.png" alt="INNEDIT" class="logo-image" />
+    <div class="subtitle">MURATRAVIS UTOPIA</div>
+</div>
+
+<style>
+    .title-logo {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-bottom: 1.5rem;
+        width: 100%;
+    }
+
+    .logo-image {
+        max-width: 250px;
+        height: auto;
+        margin-bottom: 0.5rem;
+    }
+
+    .subtitle {
+        font-size: 1.5rem;
+        font-weight: bold;
+        letter-spacing: 1px;
+        text-align: center;
+        background-color: rgba(0, 0, 0, 0.5);
+        padding: 0.5rem 1.5rem;
+        border-radius: 4px;
+    }
+
+    @media (max-width: 768px) {
+        .logo-image {
+            max-width: 180px;
+        }
+
+        .subtitle {
+            font-size: 1.2rem;
+        }
+    }
+</style>
