@@ -6,77 +6,124 @@ import Layout from "../layouts/Layout.astro";
 ---
 
 <Layout>
-	<BackgroundSection>
-		<div class="page-content">
-			<TitleLogo />
-			<ProductShowcase />
-			<div class="product-text">ESTE PRODUCTO ES ORIGINAL</div>
-			<div class="social-icons">
-				<a href="https://inneditclub.com/password" class="social-icon">
-					<img src="SITIO_WEB.webp" alt="Website" />
-				</a>
-				<a href="https://www.tiktok.com/@inneditmx" class="social-icon">
-					<img src="tiktok.webp" alt="TikTok" />
-				</a>
-				<a href="https://www.instagram.com/innedit.mx/" class="social-icon">
-					<img src="INSTA.webp" alt="Instagram" />
-				</a>
-			</div>
-		</div>
-	</BackgroundSection>
+    <BackgroundSection>
+        <div class="page-content">
+            <TitleLogo />
+            <ProductShowcase />
+            <div class="product-text animate-fade-in">ESTE PRODUCTO ES ORIGINAL</div>
+            <div class="social-icons">
+                <a href="https://inneditclub.com/password" class="social-icon animate-bounce">
+                    <img src="SITIO_WEB.webp" alt="Website" />
+                </a>
+                <a href="https://www.tiktok.com/@inneditmx" class="social-icon animate-bounce">
+                    <img src="tiktok.webp" alt="TikTok" />
+                </a>
+                <a href="https://www.instagram.com/innedit.mx/" class="social-icon animate-bounce">
+                    <img src="INSTA.webp" alt="Instagram" />
+                </a>
+            </div>
+        </div>
+    </BackgroundSection>
 </Layout>
 
 <style>
-	.page-content {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: space-between;
-    min-height: 80vh;
-    padding: 0 0 2rem 0; /* arriba derecha abajo izquierda */
-    width: 100%;
-    gap: 1rem;
-	}
+    .page-content {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-between;
+        min-height: 80vh;
+        padding: 0 0 2rem 0;
+        width: 100%;
+        gap: 1rem;
+    }
 
-	.product-text {
-		font-size: 1.5rem;
-		font-weight: bold;
-		letter-spacing: 1px;
-		margin-top: 1rem;
-		text-align: center;
-		background-color: rgba(0, 0, 0, 0.5);
-		padding: 0.5rem 1.5rem;
-		border-radius: 15px;
-	}
+    .product-text {
+        font-size: 1.5rem;
+        font-weight: bold;
+        letter-spacing: 1px;
+        margin-top: 1rem;
+        text-align: center;
+        background-color: rgba(0, 0, 0, 0.5);
+        padding: 0.5rem 1.5rem;
+        border-radius: 15px;
+        opacity: 0;
+        animation: fadeIn 0.8s ease-out 1.5s forwards;
+    }
 
-	.social-icons {
-		display: flex;
-		gap: 2rem;
-		margin-top: 2rem;
-	}
+    .social-icons {
+        display: flex;
+        gap: 2rem;
+        margin-top: 2rem;
+    }
 
-	.social-icon img {
-		width: 70px;
-		height: 70px;
-		transition: transform 0.3s ease;
-	}
+    .social-icon {
+        opacity: 0;
+        transform: translateY(20px);
+    }
 
-	.social-icon:hover img {
-		transform: scale(1.2);
-	}
+    .social-icon img {
+        width: 70px;
+        height: 70px;
+        transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    }
 
-	@media (max-width: 768px) {
-		.product-text {
-			font-size: 1.2rem;
-		}
+    .animate-bounce {
+        animation: bounceIn 0.8s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+    }
 
-		.social-icon img {
-			width: 60px;
-			height: 60px;
-		}
+    .social-icons .social-icon:nth-child(1) {
+        animation-delay: 1.8s;
+    }
 
-		.social-icons {
-			gap: 1.5rem;
-		}
-	}
+    .social-icons .social-icon:nth-child(2) {
+        animation-delay: 2s;
+    }
+
+    .social-icons .social-icon:nth-child(3) {
+        animation-delay: 2.2s;
+    }
+
+    .social-icon:hover img {
+        transform: scale(1.15) translateY(-5px);
+        filter: brightness(1.2);
+    }
+
+    @keyframes fadeIn {
+        from {
+            opacity: 0;
+        }
+        to {
+            opacity: 1;
+        }
+    }
+
+    @keyframes bounceIn {
+        0% {
+            opacity: 0;
+            transform: translateY(20px);
+        }
+        50% {
+            transform: translateY(-10px);
+        }
+        100% {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+
+    @media (max-width: 768px) {
+        .product-text {
+            font-size: 1.2rem;
+        }
+
+        .social-icon img {
+            width: 60px;
+            height: 60px;
+        }
+
+        .social-icons {
+            gap: 1.5rem;
+        }
+    }
 </style>
