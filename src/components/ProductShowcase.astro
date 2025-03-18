@@ -1,12 +1,22 @@
 ---
 // ProductShowcase.astro - Componente para mostrar la gorra con verificación
+
+export interface Props {
+    productImage?: string;
+    productAlt?: string;
+}
+
+const { 
+    productImage = "UTOPIAGORRA.webp", 
+    productAlt = "Gorra Utopia" 
+} = Astro.props;
 ---
 
 <div class="product-showcase">
     <div class="image-container">
         <img
-            src="UTOPIAGORRAPRUEBA.webp"
-            alt="Gorra Utopia"
+            src={productImage}
+            alt={productAlt}
             class="product-image"
         />
         <img
