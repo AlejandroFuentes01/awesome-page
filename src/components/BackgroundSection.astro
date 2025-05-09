@@ -1,5 +1,5 @@
 ---
-// BackgroundSection.astro (modificado para mostrar videos por página)
+// BackgroundSection.astro (ajustado para mostrar videos solo en celulares)
 ---
 
 <section class="bg-section">
@@ -13,7 +13,7 @@
         <div class="bg-cell cell-7"></div>
     </div>
     
-    <!-- Videos de fondo para diferentes páginas -->
+    <!-- Videos de fondo para diferentes páginas - solo visibles en celulares -->
     <div class="mobile-video-background flvwer-video">
         <video autoplay muted loop playsinline>
             <source src="/compress-INNEDIT-VIDEO-1-V2.mp4" type="video/mp4">
@@ -97,7 +97,7 @@
     .cell-5 { opacity: 0.99; }
     .cell-6 { opacity: 0.96; }
 
-    /* Para resoluciones pequeñas, usar solo un GIF a pantalla completa */
+    /* Para todos los dispositivos medianos y pequeños, simplificar el grid de fondo */
     @media (max-width: 1199px) {
         .bg-grid {
             display: block;

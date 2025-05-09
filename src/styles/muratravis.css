@@ -1,9 +1,9 @@
 /* styles/muratravis.css */
 /* Estilos específicos para la página MURATRAVIS */
 
-/* Estilos específicos para dispositivos móviles */
-@media (max-width: 1199px) {
-    /* Mostrar video específico y ocultar grid en móviles */
+/* Estilos para celulares (menos de 768px) */
+@media (max-width: 767px) {
+    /* Mostrar video específico y ocultar grid en celulares */
     .muratravis-page .muratravis-video {
         display: block !important;
     }
@@ -17,7 +17,7 @@
         display: none !important;
     }
     
-    /* Ocultar el producto en móviles */
+    /* Ocultar el producto en celulares */
     .muratravis-page .product-container {
         display: none !important;
     }
@@ -28,31 +28,56 @@
         flex-direction: column;
         justify-content: space-between;
         min-height: 100vh;
+        max-height: 100vh; /* Garantiza que no sobrepase el alto de la ventana */
+        height: 100vh;
         padding: 0;
+        overflow-y: auto; /* Permite scroll si es necesario */
+        position: relative; /* Para posicionar elementos internos */
     }
     
-    /* Mover el logo y subtítulo más arriba */
+    /* Mover el logo y subtítulo más arriba y reducir tamaño en pantallas pequeñas */
     .muratravis-page .title-logo {
-        margin-top: 20px;
+        margin-top: 15px;
         margin-bottom: 0;
+        padding: 0 10px;
     }
     
-    /* AJUSTE: Mover el texto "ESTE PRODUCTO ES ORIGINAL" más abajo */
+    /* Reducir más el logo en pantallas muy pequeñas */
+    .muratravis-page .title-logo .logo-image {
+        max-width: 150px;
+    }
+    
+    /* Ajustar el texto "ESTE PRODUCTO ES ORIGINAL" */
     .muratravis-page .product-text {
-        font-size: 1.4rem;
+        font-size: 1.2rem;
         background-color: rgba(0, 0, 0, 0.3);
-        padding: 0.75rem 2rem;
+        padding: 0.6rem 1.5rem;
         border-radius: 20px;
-        margin-top: auto;
-        margin-bottom: 120px;
+        /* Usando flexbox para posicionamiento vertical */
+        margin-top: auto; /* Empujar hacia abajo */
+        margin-bottom: 100px; /* Espacio fijo sobre las redes */
         position: relative;
-        top: 94px;
+        top: 0; /* Eliminar posición fija */
     }
     
-    /* Ajustar posición de las redes sociales para que estén en la parte inferior */
+    /* Ajustar posición de las redes sociales para que siempre sean visibles */
     .muratravis-page .social-icons {
-        margin-top: 0;
-        margin-bottom: 40px;
+        position: relative;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        margin: 0 auto;
+        padding-bottom: 20px;
+        display: flex;
+        justify-content: center;
+        gap: 30px;
+        z-index: 10; /* Asegurar que esté por encima de otros elementos */
+    }
+    
+    /* Reducir tamaño de iconos en pantallas pequeñas */
+    .muratravis-page .social-icons .social-icon img {
+        width: 50px;
+        height: 50px;
     }
     
     /* Asegurar que el contenedor ocupe toda la altura */
@@ -63,19 +88,82 @@
     }
 }
 
-/* Ajustes para pantallas muy bajas */
-@media (max-width: 1199px) and (max-height: 700px) {
+/* Para pantallas realmente pequeñas, ajustar aún más el espaciado */
+@media (max-width: 359px) {
+    .muratravis-page .title-logo .logo-image {
+        max-width: 120px;
+    }
+    
+    .muratravis-page .title-logo .subtitle {
+        font-size: 1rem;
+        padding: 0.4rem 1rem;
+    }
+    
+    .muratravis-page .product-text {
+        font-size: 1rem;
+        padding: 0.5rem 1.2rem;
+        margin-bottom: 70px;
+    }
+    
+    .muratravis-page .social-icons {
+        gap: 20px;
+    }
+    
+    .muratravis-page .social-icons .social-icon img {
+        width: 40px;
+        height: 40px;
+    }
+}
+
+/* Para dispositivos muy bajos (iPhone SE y similares) */
+@media (max-width: 767px) and (max-height: 667px) {
     .muratravis-page .title-logo {
         margin-top: 10px;
     }
     
     .muratravis-page .product-text {
-        margin-bottom: 70px;
-        top: 15px;
+        margin-bottom: 60px;
     }
     
     .muratravis-page .social-icons {
-        margin-bottom: 20px;
+        padding-bottom: 15px;
+    }
+}
+
+/* Para pantallas extra pequeñas con altura reducida */
+@media (max-width: 359px) and (max-height: 640px) {
+    .muratravis-page .title-logo {
+        margin-top: 5px;
+    }
+    
+    .muratravis-page .product-text {
+        margin-bottom: 50px;
+    }
+    
+    .muratravis-page .social-icons {
+        padding-bottom: 10px;
+    }
+}
+
+/* Estilos para tablets (entre 768px y 1199px) - Mantener el fondo de GIF */
+@media (min-width: 768px) and (max-width: 1199px) {
+    /* Asegurarnos de que el video esté oculto */
+    .muratravis-page .mobile-video-background {
+        display: none !important;
+    }
+    
+    /* Asegurarnos de que el fondo de GIF se muestre */
+    .muratravis-page .bg-grid {
+        display: block !important;
+    }
+    
+    .muratravis-page .cell-1 {
+        display: block !important;
+    }
+    
+    /* Mostrar el producto en tablets */
+    .muratravis-page .product-container {
+        display: block !important;
     }
 }
 
