@@ -4,28 +4,37 @@ import ProductShowcase from "../components/ProductShowcase.astro";
 import TitleLogo from "../components/TitleLogo.astro";
 import Layout from "../layouts/Layout.astro";
 import "../styles/common.css";
+import "../styles/crystalblack.css";
 ---
 
 <Layout title="INNEDIT - CRYSTAL BLACK">
-    <BackgroundSection>
-        <div class="page-content">
-            <TitleLogo subtitle="CRYSTAL BLACK" />
-            <ProductShowcase
-                productImage="CRYSTALBLACKGORRA.webp"
-                productAlt="Gorra Crystal Black"
-            />
-            <div class="product-text animate-fade-in">ESTE PRODUCTO ES ORIGINAL</div>
-            <div class="social-icons">
-                <a href="https://inneditclub.com/password" class="social-icon animate-bounce">
-                    <img src="SITIO_WEB.webp" alt="Website" />
-                </a>
-                <a href="https://www.tiktok.com/@inneditmx" class="social-icon animate-bounce">
-                    <img src="tiktok.webp" alt="TikTok" />
-                </a>
-                <a href="https://www.instagram.com/innedit.mx/" class="social-icon animate-bounce">
-                    <img src="INSTA.webp" alt="Instagram" />
-                </a>
+    <div class="crystalblack-page">
+        <BackgroundSection>
+            <div class="page-content">
+                <TitleLogo subtitle="CRYSTAL BLACK" />
+                <div class="product-container">
+                    <ProductShowcase
+                        productImage="CRYSTALBLACKGORRA.webp"
+                        productAlt="Gorra Crystal Black"
+                    />
+                </div>
+                <div class="product-text animate-fade-in">ESTE PRODUCTO ES ORIGINAL</div>
+                <div class="social-icons">
+                    <a href="https://inneditclub.com/password" class="social-icon animate-bounce">
+                        <img src="SITIO_WEB.webp" alt="Website" />
+                    </a>
+                    <a href="https://www.tiktok.com/@inneditmx" class="social-icon animate-bounce">
+                        <img src="tiktok.webp" alt="TikTok" />
+                    </a>
+                    <a href="https://www.instagram.com/innedit.mx/" class="social-icon animate-bounce">
+                        <img src="INSTA.webp" alt="Instagram" />
+                    </a>
+                </div>
             </div>
-        </div>
-    </BackgroundSection>
+        </BackgroundSection>
+    </div>
 </Layout>
+
+<style>
+    /* Los estilos específicos se encuentran en crystalblack.css */
+</style>

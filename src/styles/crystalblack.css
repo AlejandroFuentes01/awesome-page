@@ -1,0 +1,91 @@
+/* styles/crystalblack.css */
+/* Estilos específicos para la página CRYSTAL BLACK */
+
+/* Estilos específicos para dispositivos móviles */
+@media (max-width: 1199px) {
+    /* Mostrar video específico y ocultar grid en móviles */
+    .crystalblack-page .crystalblack-video {
+        display: block !important;
+    }
+    
+    .crystalblack-page .bg-grid {
+        display: none !important;
+    }
+    
+    /* La celda-1 tiene display: block en media query, así que aseguramos que se oculte */
+    .crystalblack-page .bg-grid .cell-1 {
+        display: none !important;
+    }
+    
+    /* Ocultar el producto en móviles */
+    .crystalblack-page .product-container {
+        display: none !important;
+    }
+    
+    /* Ajustar espaciado para la distribución vertical deseada */
+    .crystalblack-page .page-content {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        min-height: 100vh;
+        padding: 0;
+    }
+    
+    /* Mover el logo y subtítulo más arriba */
+    .crystalblack-page .title-logo {
+        margin-top: 20px;
+        margin-bottom: 0;
+    }
+    
+    /* AJUSTE: Mover el texto "ESTE PRODUCTO ES ORIGINAL" más abajo */
+    .crystalblack-page .product-text {
+        font-size: 1.4rem;
+        background-color: rgba(0, 0, 0, 0.3);
+        padding: 0.75rem 2rem;
+        border-radius: 20px;
+        margin-top: auto;
+        margin-bottom: 120px;
+        position: relative;
+        top: 94px;
+    }
+    
+    /* Ajustar posición de las redes sociales para que estén en la parte inferior */
+    .crystalblack-page .social-icons {
+        margin-top: 0;
+        margin-bottom: 40px;
+    }
+    
+    /* Asegurar que el contenedor ocupe toda la altura */
+    .crystalblack-page,
+    .crystalblack-page .bg-section {
+        min-height: 100vh;
+        height: 100vh;
+    }
+}
+
+/* Ajustes para pantallas muy bajas */
+@media (max-width: 1199px) and (max-height: 700px) {
+    .crystalblack-page .title-logo {
+        margin-top: 10px;
+    }
+    
+    .crystalblack-page .product-text {
+        margin-bottom: 70px;
+        top: 15px;
+    }
+    
+    .crystalblack-page .social-icons {
+        margin-bottom: 20px;
+    }
+}
+
+/* Estilos para asegurar que en escritorio sí se vea el producto */
+@media (min-width: 1200px) {
+    .crystalblack-page .product-container {
+        display: block;
+    }
+    
+    .crystalblack-page .mobile-video-background {
+        display: none !important;
+    }
+}

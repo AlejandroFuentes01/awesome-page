@@ -1,5 +1,5 @@
 ---
-// BackgroundSection.astro
+// BackgroundSection.astro (modificado para mostrar videos por página)
 ---
 
 <section class="bg-section">
@@ -12,6 +12,26 @@
         <div class="bg-cell cell-6"></div>
         <div class="bg-cell cell-7"></div>
     </div>
+    
+    <!-- Videos de fondo para diferentes páginas -->
+    <div class="mobile-video-background flvwer-video">
+        <video autoplay muted loop playsinline>
+            <source src="/compress-INNEDIT-VIDEO-1-V2.mp4" type="video/mp4">
+        </video>
+    </div>
+    
+    <div class="mobile-video-background muratravis-video">
+        <video autoplay muted loop playsinline>
+            <source src="/compress-INNEDIT-VIDEO-2-V2.mp4" type="video/mp4">
+        </video>
+    </div>
+    
+    <div class="mobile-video-background crystalblack-video">
+        <video autoplay muted loop playsinline>
+            <source src="/compress-INNEDIT-VIDEO-3-V2.mp4" type="video/mp4">
+        </video>
+    </div>
+    
     <slot />
 </section>
 
@@ -31,6 +51,23 @@
         color: white;
         font-family: "Alte Haas Grotesk", sans-serif;
         overflow-y: auto;
+    }
+
+    /* Estilos para los videos de fondo */
+    .mobile-video-background {
+        display: none; /* Por defecto están ocultos */
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: -1;
+    }
+
+    .mobile-video-background video {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
     }
 
     .bg-grid {
