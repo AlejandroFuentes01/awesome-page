@@ -37,7 +37,6 @@
     width: 100%;
     justify-content: center; /* Centrado horizontal */
     align-items: center; /* Centrado vertical */
-    padding: 0 1rem;
     position: relative;
     z-index: 10;
 }
