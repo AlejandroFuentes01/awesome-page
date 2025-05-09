@@ -91,116 +91,17 @@
     }
 }
 
-/* Estilos comunes para todas las páginas en móvil */
 @media (max-width: 767px) {
-    .crystalblack-page .page-content,
-    .flvwer-page .page-content,
-    .muratravis-page .page-content {
-        display: flex;
-        flex-direction: column;
-        min-height: 100vh;
-        height: 100vh;
-        /* Crucial: Establecer overflow-y en auto para permitir scroll si es necesario */
-        overflow-y: auto;
-        padding-bottom: 0; /* Eliminamos padding del contenedor principal */
-        position: relative;
-        padding-bottom: env(safe-area-inset-bottom, 0);
-    }
-    
-    /* Contenedor principal de cada sección */
-    .page-content {
-        /* Establecer height en 100% para evitar problemas con alturas dinámicas */
-        height: 100%;
-        justify-content: flex-start; /* Alinear desde arriba */
-    }
-    
-    /* Ajustes para el texto del producto */
     .product-text {
         font-size: 1.2rem;
-        margin-top: 2rem; /* Añadir espacio arriba */
     }
     
-    /* Nueva configuración para los íconos sociales */
+    .social-icon img {
+        width: 60px;
+        height: 60px;
+    }
+    
     .social-icons {
-        position: fixed; /* Posición fija en lugar de relativa */
-        bottom: 70px; /* Valor alto para asegurar visibilidad */
-        left: 0;
-        right: 0;
-        margin: 0 auto;
-        padding-bottom: 0;
-        width: 100%;
-        display: flex;
-        justify-content: center;
         gap: 1.5rem;
-        z-index: 999;
-    }
-    
-    .social-icon img {
-        width: 50px;
-        height: 50px;
-    }
-}
-
-/* Para dispositivos muy pequeños */
-@media (max-width: 359px) {
-    .social-icon img {
-        width: 45px;
-        height: 45px;
-    }
-    
-    .social-icons {
-        gap: 1.2rem;
-        bottom: 65px;
-    }
-    
-    .product-text {
-        font-size: 1rem;
-        padding: 0.4rem 1.2rem;
-    }
-}
-
-/* Dispositivos con altura muy baja (iPhone SE, etc.) */
-@media (max-height: 667px) {
-    .social-icons {
-        bottom: 60px;
-    }
-    
-    .social-icon img {
-        width: 40px;
-        height: 40px;
-    }
-}
-
-/* Dispositivos con notch o island */
-@supports (padding-bottom: env(safe-area-inset-bottom)) {
-    .social-icons {
-        bottom: calc(70px + env(safe-area-inset-bottom));
-    }
-}
-
-/* Para dispositivos con pantallas muy altas */
-@media (min-height: 800px) {
-    .social-icons {
-        bottom: 85px;
-    }
-}
-
-/* Para iPhone 12/13/14 Pro Max y similares */
-@media (min-height: 845px) and (max-width: 428px) {
-    .social-icons {
-        bottom: 95px;
-    }
-}
-
-/* Ajustes específicos para Galaxy Fold y dispositivos muy estrechos */
-@media (max-width: 280px) {
-    .social-icons {
-        gap: 0.8rem;
-        bottom: 55px;
-    }
-    
-    .social-icon img {
-        width: 38px;
-        height: 38px;
     }
 }
