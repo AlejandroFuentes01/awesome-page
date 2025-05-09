@@ -8,7 +8,7 @@
     padding: 0 0 2rem 0;
     width: 100%;
     gap: 1rem;
-    position: relative; /* Agregado para posicionamiento correcto */
+    position: relative;
 }
 
 .product-text {
@@ -28,11 +28,11 @@
     display: flex;
     gap: 2rem;
     margin-top: 2rem;
-    margin-bottom: 1.5rem; /* Asegura espacio en la parte inferior */
+    margin-bottom: 1.5rem;
     width: 100%;
     justify-content: center;
-    padding: 0 1rem; /* Padding horizontal para evitar que toquen los bordes */
-    position: relative; /* Cambiado de fixed a relative */
+    padding: 0 1rem;
+    position: relative;
     z-index: 10;
 }
 
@@ -91,138 +91,116 @@
     }
 }
 
-/* Para hacer que todas las páginas sigan las mismas reglas responsivas */
-.crystalblack-page .page-content,
-.flvwer-page .page-content,
-.muratravis-page .page-content {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    min-height: 100vh;
-    max-height: 100vh;
-    padding: 0 0 env(safe-area-inset-bottom, 1rem) 0; /* Usa safe-area para dispositivos con notch */
-    overflow-y: auto;
-    position: relative;
-}
-
-/* Reglas responsivas mejoradas para todos los dispositivos móviles */
+/* Estilos comunes para todas las páginas en móvil */
 @media (max-width: 767px) {
-    .crystalblack-page .social-icons,
-    .flvwer-page .social-icons,
-    .muratravis-page .social-icons {
+    .crystalblack-page .page-content,
+    .flvwer-page .page-content,
+    .muratravis-page .page-content {
+        display: flex;
+        flex-direction: column;
+        min-height: 100vh;
+        height: 100vh;
+        /* Crucial: Establecer overflow-y en auto para permitir scroll si es necesario */
+        overflow-y: auto;
+        padding-bottom: 0; /* Eliminamos padding del contenedor principal */
         position: relative;
-        bottom: 0;
-        width: 100%;
-        margin: 0 auto;
-        padding-bottom: max(20px, env(safe-area-inset-bottom, 20px)); /* Usa el valor mayor entre 20px y safe-area-inset-bottom */
-        gap: clamp(15px, 4vw, 30px); /* Gap adaptativo basado en el ancho de la ventana */
-        z-index: 10;
+        padding-bottom: env(safe-area-inset-bottom, 0);
     }
     
-    .crystalblack-page .social-icon img,
-    .flvwer-page .social-icon img,
-    .muratravis-page .social-icon img {
-        width: clamp(40px, 10vw, 50px); /* Tamaño adaptativo basado en el ancho de la ventana */
-        height: clamp(40px, 10vw, 50px);
+    /* Contenedor principal de cada sección */
+    .page-content {
+        /* Establecer height en 100% para evitar problemas con alturas dinámicas */
+        height: 100%;
+        justify-content: flex-start; /* Alinear desde arriba */
     }
     
-    .crystalblack-page .product-text,
-    .flvwer-page .product-text,
-    .muratravis-page .product-text {
-        margin-bottom: clamp(50px, 15vh, 100px); /* Espacio adaptativo basado en altura de la ventana */
-        font-size: clamp(0.9rem, 4vw, 1.2rem); /* Tamaño de texto adaptativo */
-    }
-    
+    /* Ajustes para el texto del producto */
     .product-text {
         font-size: 1.2rem;
-        padding: 0.6rem 1.5rem;
+        margin-top: 2rem; /* Añadir espacio arriba */
+    }
+    
+    /* Nueva configuración para los íconos sociales */
+    .social-icons {
+        position: fixed; /* Posición fija en lugar de relativa */
+        bottom: 70px; /* Valor alto para asegurar visibilidad */
+        left: 0;
+        right: 0;
+        margin: 0 auto;
+        padding-bottom: 0;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        gap: 1.5rem;
+        z-index: 999;
     }
     
     .social-icon img {
-        width: 60px;
-        height: 60px;
-    }
-    
-    .social-icons {
-        gap: 1.5rem;
+        width: 50px;
+        height: 50px;
     }
 }
 
-/* Para dispositivos realmente pequeños */
+/* Para dispositivos muy pequeños */
 @media (max-width: 359px) {
-    .crystalblack-page .social-icons,
-    .flvwer-page .social-icons,
-    .muratravis-page .social-icons {
-        gap: 15px;
-        padding-bottom: max(25px, env(safe-area-inset-bottom, 25px)); /* Más padding para dispositivos muy pequeños */
+    .social-icon img {
+        width: 45px;
+        height: 45px;
     }
     
-    .crystalblack-page .social-icon img,
-    .flvwer-page .social-icon img,
-    .muratravis-page .social-icon img {
-        width: 40px;
-        height: 40px;
+    .social-icons {
+        gap: 1.2rem;
+        bottom: 65px;
     }
     
     .product-text {
         font-size: 1rem;
+        padding: 0.4rem 1.2rem;
     }
 }
 
-/* Para dispositivos con poca altura y notch */
+/* Dispositivos con altura muy baja (iPhone SE, etc.) */
 @media (max-height: 667px) {
-    .crystalblack-page .page-content,
-    .flvwer-page .page-content,
-    .muratravis-page .page-content {
-        justify-content: flex-start; /* Cambia a alineación superior */
-        gap: 2vh; /* Espacio entre elementos adaptativo */
+    .social-icons {
+        bottom: 60px;
     }
     
-    .crystalblack-page .product-text,
-    .flvwer-page .product-text,
-    .muratravis-page .product-text {
-        margin-top: auto; /* Empuja hacia abajo */
-        margin-bottom: clamp(40px, 10vh, 60px); /* Espacio adaptativo reducido */
-    }
-    
-    .crystalblack-page .social-icons,
-    .flvwer-page .social-icons,
-    .muratravis-page .social-icons {
-        padding-bottom: max(25px, env(safe-area-inset-bottom, 25px));
+    .social-icon img {
+        width: 40px;
+        height: 40px;
     }
 }
 
-/* Para dispositivos con pantallas muy altas (teléfonos modernos) */
-@media (min-height: 800px) and (max-width: 767px) {
-    .crystalblack-page .social-icons,
-    .flvwer-page .social-icons,
-    .muratravis-page .social-icons {
-        padding-bottom: max(30px, env(safe-area-inset-bottom, 30px)); /* Más espacio para teléfonos altos */
-    }
-}
-
-/* Fix para iPhone X, 11, 12, 13, 14 y dispositivos con notch o island */
+/* Dispositivos con notch o island */
 @supports (padding-bottom: env(safe-area-inset-bottom)) {
-    .crystalblack-page .social-icons,
-    .flvwer-page .social-icons,
-    .muratravis-page .social-icons {
-        padding-bottom: calc(20px + env(safe-area-inset-bottom));
+    .social-icons {
+        bottom: calc(70px + env(safe-area-inset-bottom));
     }
 }
 
-/* Estilos para dispositivos con aspect ratio extremo (muy alto o muy ancho) */
-@media (max-aspect-ratio: 9/16) {
-    .crystalblack-page .social-icons,
-    .flvwer-page .social-icons,
-    .muratravis-page .social-icons {
-        padding-bottom: max(40px, env(safe-area-inset-bottom, 40px));
+/* Para dispositivos con pantallas muy altas */
+@media (min-height: 800px) {
+    .social-icons {
+        bottom: 85px;
     }
 }
 
-@media (min-aspect-ratio: 18/9) {
-    .crystalblack-page .product-text,
-    .flvwer-page .product-text,
-    .muratravis-page .product-text {
-        margin-bottom: clamp(30px, 8vh, 60px);
+/* Para iPhone 12/13/14 Pro Max y similares */
+@media (min-height: 845px) and (max-width: 428px) {
+    .social-icons {
+        bottom: 95px;
+    }
+}
+
+/* Ajustes específicos para Galaxy Fold y dispositivos muy estrechos */
+@media (max-width: 280px) {
+    .social-icons {
+        gap: 0.8rem;
+        bottom: 55px;
+    }
+    
+    .social-icon img {
+        width: 38px;
+        height: 38px;
     }
 }
