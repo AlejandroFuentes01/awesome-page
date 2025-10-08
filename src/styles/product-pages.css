@@ -1,29 +1,39 @@
-/* styles/flvwer.css */
-/* Estilos específicos para la página FLVWER */
+/* styles/product-pages.css */
+/* CSS UNIFICADO para todas las páginas de productos */
+/* Consolida: flvwer.css, muratravis.css, crystalblack.css */
 
 /* Estilos para celulares (menos de 768px) */
 @media (max-width: 767px) {
-    /* Mostrar video específico y ocultar grid en celulares */
-    .flvwer-page .flvwer-video {
+    /* Videos específicos por página - solo uno se muestra por página */
+    .product-page.flvwer .flvwer-video {
         display: block !important;
     }
     
-    .flvwer-page .bg-grid {
+    .product-page.muratravis .muratravis-video {
+        display: block !important;
+    }
+    
+    .product-page.crystalblack .crystalblack-video {
+        display: block !important;
+    }
+    
+    /* Ocultar grid de fondo en celulares para todas las páginas */
+    .product-page .bg-grid {
         display: none !important;
     }
     
     /* La celda-1 tiene display: block en media query, así que aseguramos que se oculte */
-    .flvwer-page .bg-grid .cell-1 {
+    .product-page .bg-grid .cell-1 {
         display: none !important;
     }
     
     /* Ocultar el producto en celulares */
-    .flvwer-page .product-container {
+    .product-page .product-container {
         display: none !important;
     }
     
     /* Ajustar espaciado para la distribución vertical deseada */
-    .flvwer-page .page-content {
+    .product-page .page-content {
         display: flex;
         flex-direction: column;
         justify-content: space-between;
@@ -37,7 +47,7 @@
     }
     
     /* Mover el logo y subtítulo más arriba y reducir tamaño en pantallas pequeñas */
-    .flvwer-page .title-logo {
+    .product-page .title-logo {
         margin-top: 15px;
         margin-bottom: 0;
         padding: 0 10px;
@@ -49,13 +59,13 @@
     }
     
     /* Reducir más el logo en pantallas muy pequeñas */
-    .flvwer-page .title-logo .logo-image {
+    .product-page .title-logo .logo-image {
         max-width: 150px;
         margin: 0 auto; /* Centrado adicional */
     }
     
     /* Ajustar el texto "ESTE PRODUCTO ES ORIGINAL" */
-    .flvwer-page .product-text {
+    .product-page .product-text {
         font-size: 1.2rem;
         background-color: rgba(0, 0, 0, 0.4);
         padding: 0.6rem 1.5rem;
@@ -72,7 +82,7 @@
     }
     
     /* Ajustar posición de las redes sociales para que siempre sean visibles */
-    .flvwer-page .social-icons {
+    .product-page .social-icons {
         position: fixed;
         bottom: 70px; /* Valor alto para garantizar visibilidad */
         left: 0;
@@ -88,14 +98,14 @@
     }
     
     /* Reducir tamaño de iconos en pantallas pequeñas */
-    .flvwer-page .social-icons .social-icon img {
+    .product-page .social-icons .social-icon img {
         width: 50px;
         height: 50px;
     }
     
     /* Asegurar que el contenedor ocupe toda la altura */
-    .flvwer-page,
-    .flvwer-page .bg-section {
+    .product-page,
+    .product-page .bg-section {
         min-height: 100vh;
         height: 100vh;
         display: flex;
@@ -106,14 +116,14 @@
 
 /* Pantallas más grandes - asegurar separación adecuada */
 @media (min-width: 768px) {
-    .flvwer-page .page-content {
+    .product-page .page-content {
         display: flex;
         flex-direction: column;
         align-items: center;
         text-align: center;
     }
     
-    .flvwer-page .product-text {
+    .product-page .product-text {
         margin-left: auto;
         margin-right: auto;
         text-align: center;
@@ -121,7 +131,7 @@
         max-width: 90%;
     }
     
-    .flvwer-page .social-icons {
+    .product-page .social-icons {
         display: flex;
         justify-content: center;
         width: 100%;
@@ -129,59 +139,59 @@
 }
 
 @media (min-width: 768px) and (max-height: 900px) {
-    .flvwer-page .product-text {
+    .product-page .product-text {
         margin-bottom: 100px; /* Más espacio en pantallas grandes */
     }
     
-    .flvwer-page .social-icons {
+    .product-page .social-icons {
         margin-top: 40px; /* Mayor separación en pantallas más grandes */
     }
 }
 
 @media (min-width: 768px) and (min-height: 901px) {
-    .flvwer-page .product-text {
+    .product-page .product-text {
         margin-bottom: 120px; /* Aún más espacio en pantallas muy grandes */
     }
     
-    .flvwer-page .social-icons {
+    .product-page .social-icons {
         margin-top: 60px; /* Más separación en pantallas muy grandes */
     }
 }
 
 /* Para dispositivos con notch o island */
 @supports (padding-bottom: env(safe-area-inset-bottom)) {
-    .flvwer-page .social-icons {
+    .product-page .social-icons {
         bottom: calc(70px + env(safe-area-inset-bottom));
     }
     
-    .flvwer-page .product-text {
+    .product-page .product-text {
         bottom: calc(130px + env(safe-area-inset-bottom));
     }
 }
 
 /* Para pantallas realmente pequeñas, ajustar aún más el espaciado */
 @media (max-width: 359px) {
-    .flvwer-page .title-logo .logo-image {
+    .product-page .title-logo .logo-image {
         max-width: 120px;
     }
     
-    .flvwer-page .title-logo .subtitle {
+    .product-page .title-logo .subtitle {
         font-size: 1rem;
         padding: 0.4rem 1rem;
     }
     
-    .flvwer-page .product-text {
+    .product-page .product-text {
         font-size: 1rem;
         padding: 0.5rem 1.2rem;
         bottom: 120px;
     }
     
-    .flvwer-page .social-icons {
+    .product-page .social-icons {
         gap: 20px;
         bottom: 65px;
     }
     
-    .flvwer-page .social-icons .social-icon img {
+    .product-page .social-icons .social-icon img {
         width: 45px;
         height: 45px;
     }
@@ -189,36 +199,36 @@
 
 /* Para dispositivos muy bajos (iPhone SE y similares) */
 @media (max-width: 767px) and (max-height: 667px) {
-    .flvwer-page .title-logo {
+    .product-page .title-logo {
         margin-top: 10px;
     }
     
-    .flvwer-page .product-text {
+    .product-page .product-text {
         bottom: 110px;
     }
     
-    .flvwer-page .social-icons {
+    .product-page .social-icons {
         bottom: 55px;
     }
 }
 
 /* Para pantallas extra pequeñas con altura reducida */
 @media (max-width: 359px) and (max-height: 640px) {
-    .flvwer-page .title-logo {
+    .product-page .title-logo {
         margin-top: 5px;
     }
     
-    .flvwer-page .product-text {
+    .product-page .product-text {
         bottom: 100px;
         font-size: 0.9rem;
         padding: 0.4rem 1rem;
     }
     
-    .flvwer-page .social-icons {
+    .product-page .social-icons {
         bottom: 45px;
     }
     
-    .flvwer-page .social-icons .social-icon img {
+    .product-page .social-icons .social-icon img {
         width: 40px;
         height: 40px;
     }
@@ -227,21 +237,21 @@
 /* Estilos para tablets (entre 768px y 1199px) - Mantener el fondo de GIF */
 @media (min-width: 768px) and (max-width: 1199px) {
     /* Asegurarnos de que el video esté oculto */
-    .flvwer-page .mobile-video-background {
+    .product-page .mobile-video-background {
         display: none !important;
     }
     
     /* Asegurarnos de que el fondo de GIF se muestre */
-    .flvwer-page .bg-grid {
+    .product-page .bg-grid {
         display: block !important;
     }
     
-    .flvwer-page .cell-1 {
+    .product-page .cell-1 {
         display: block !important;
     }
     
     /* Mostrar el producto en tablets */
-    .flvwer-page .product-container {
+    .product-page .product-container {
         display: block !important;
         margin: 0 auto; /* Centrado */
         text-align: center;
@@ -250,13 +260,13 @@
 
 /* Estilos para asegurar que en escritorio sí se vea el producto */
 @media (min-width: 1200px) {
-    .flvwer-page .product-container {
+    .product-page .product-container {
         display: block;
         margin: 0 auto; /* Centrado */
         text-align: center;
     }
     
-    .flvwer-page .mobile-video-background {
+    .product-page .mobile-video-background {
         display: none !important;
     }
 }
