@@ -4,37 +4,33 @@ import ProductShowcase from "../components/ProductShowcase.astro";
 import TitleLogo from "../components/TitleLogo.astro";
 import Layout from "../layouts/Layout.astro";
 import "../styles/common.css";
-import "../styles/flvwer.css";
+import "../styles/product-pages.css";
 ---
 
 <Layout title="INNEDIT - FLVWER">
-    <div class="flvwer-page"> <!-- Movemos la clase aquí para que abarque todo, incluyendo BackgroundSection -->
+    <div class="product-page flvwer">
         <BackgroundSection>
             <div class="page-content">
                 <TitleLogo subtitle="FLVWER" />
                 <div class="product-container">
                     <ProductShowcase
-                        productImage="FLVWER.webp"
+                        productImage="/FLVWER.webp"
                         productAlt="Gorra FLVWER"
                     />
                 </div>
                 <div class="product-text animate-fade-in">ESTE PRODUCTO ES ORIGINAL</div>
                 <div class="social-icons">
                     <a href="https://inneditclub.com/password" class="social-icon animate-bounce">
-                        <img src="SITIO_WEB.webp" alt="Website" />
+                        <img src="/SITIO_WEB.webp" alt="Website" />
                     </a>
                     <a href="https://www.tiktok.com/@inneditmx" class="social-icon animate-bounce">
-                        <img src="tiktok.webp" alt="TikTok" />
+                        <img src="/tiktok.webp" alt="TikTok" />
                     </a>
                     <a href="https://www.instagram.com/innedit.mx/" class="social-icon animate-bounce">
-                        <img src="INSTA.webp" alt="Instagram" />
+                        <img src="/INSTA.webp" alt="Instagram" />
                     </a>
                 </div>
             </div>
         </BackgroundSection>
     </div>
 </Layout>
-
-<style>
-    /* Movemos los estilos específicos a flvwer.css para mantener este archivo limpio */
-</style>
