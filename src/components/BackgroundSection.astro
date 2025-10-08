@@ -12,26 +12,40 @@
         <div class="bg-cell cell-6"></div>
         <div class="bg-cell cell-7"></div>
     </div>
-    
+
     <!-- Videos de fondo para diferentes páginas - solo visibles en celulares -->
     <div class="mobile-video-background flvwer-video">
         <video autoplay muted loop playsinline>
-            <source src="/compress-INNEDIT-VIDEO-1-V2.mp4" type="video/mp4">
+            <source src="/compress-INNEDIT-VIDEO-1-V2.mp4" type="video/mp4" />
         </video>
     </div>
-    
+
     <div class="mobile-video-background muratravis-video">
         <video autoplay muted loop playsinline>
-            <source src="/compress-INNEDIT-VIDEO-2-V2.mp4" type="video/mp4">
+            <source src="/compress-INNEDIT-VIDEO-2-V2.mp4" type="video/mp4" />
         </video>
     </div>
-    
+
     <div class="mobile-video-background crystalblack-video">
         <video autoplay muted loop playsinline>
-            <source src="/compress-INNEDIT-VIDEO-3-V2.mp4" type="video/mp4">
+            <source src="/compress-INNEDIT-VIDEO-3-V2.mp4" type="video/mp4" />
         </video>
     </div>
-    
+    <div class="mobile-video-background anymoreandinnedit-video">
+        <video autoplay muted loop playsinline>
+            <source src="/compress-INNEDIT-VIDEO-4-V2.mp4" type="video/mp4" />
+        </video>
+    </div>
+    <div class="mobile-video-background lamiribrucewayne-video">
+        <video autoplay muted loop playsinline>
+            <source src="/compress-INNEDIT-VIDEO-5-V2.mp4" type="video/mp4" />
+        </video>
+    </div>
+    <div class="mobile-video-background muratraviselectric-video">
+        <video autoplay muted loop playsinline>
+            <source src="/compress-INNEDIT-VIDEO-6-V2.mp4" type="video/mp4" />
+        </video>
+    </div>
     <slot />
 </section>
 
@@ -90,23 +104,35 @@
     }
 
     /* Pequeñas variaciones en la apariencia para romper la uniformidad */
-    .cell-1 { opacity: 0.98; }
-    .cell-2 { opacity: 0.96; }
-    .cell-3 { opacity: 0.97; }
-    .cell-4 { opacity: 0.95; }
-    .cell-5 { opacity: 0.99; }
-    .cell-6 { opacity: 0.96; }
+    .cell-1 {
+        opacity: 0.98;
+    }
+    .cell-2 {
+        opacity: 0.96;
+    }
+    .cell-3 {
+        opacity: 0.97;
+    }
+    .cell-4 {
+        opacity: 0.95;
+    }
+    .cell-5 {
+        opacity: 0.99;
+    }
+    .cell-6 {
+        opacity: 0.96;
+    }
 
     /* Para todos los dispositivos medianos y pequeños, simplificar el grid de fondo */
     @media (max-width: 1199px) {
         .bg-grid {
             display: block;
         }
-        
+
         .bg-cell {
             display: none;
         }
-        
+
         .cell-1 {
             display: block;
             position: absolute;
@@ -124,7 +150,7 @@
         .bg-section {
             min-height: 100vh; /* Asegura altura mínima */
         }
-        
+
         .cell-1 {
             height: 100vh; /* Fuerza altura completa */
             min-height: 100%; /* Asegura que cubra todo */
@@ -140,13 +166,13 @@
             gap: 0;
             box-shadow: inset 0 0 100px rgba(0, 0, 0, 0.3);
         }
-        
+
         .bg-cell {
             position: relative;
         }
-        
+
         .bg-cell::after {
-            content: '';
+            content: "";
             position: absolute;
             top: 0;
             left: 0;
@@ -166,7 +192,7 @@
         .bg-grid {
             box-shadow: inset 0 0 150px rgba(0, 0, 0, 0.35);
         }
-        
+
         .bg-cell::after {
             background: radial-gradient(
                 circle at center,

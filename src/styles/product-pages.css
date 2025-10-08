@@ -17,6 +17,18 @@
         display: block !important;
     }
     
+    .product-page.anymoreandinnedit .anymoreandinnedit-video {
+        display: block !important;
+    }
+    
+    .product-page.lamiribrucewayne .lamiribrucewayne-video {
+        display: block !important;
+    }
+    
+    .product-page.muratraviselectric .muratraviselectric-video {
+        display: block !important;
+    }
+    
     /* Ocultar grid de fondo en celulares para todas las páginas */
     .product-page .bg-grid {
         display: none !important;

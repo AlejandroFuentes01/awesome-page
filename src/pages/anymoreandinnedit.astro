@@ -1,314 +1,36 @@
-<!DOCTYPE html>
-<html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Anymoreandinnedit</title>
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+---
+import BackgroundSection from "../components/BackgroundSection.astro";
+import ProductShowcase from "../components/ProductShowcase.astro";
+import TitleLogo from "../components/TitleLogo.astro";
+import Layout from "../layouts/Layout.astro";
+import "../styles/common.css";
+import "../styles/product-pages.css";
+---
 
-        body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
-            background-color: #0a0a0a;
-            color: #ffffff;
-            min-height: 100vh;
-            display: flex;
-            flex-direction: column;
-            overflow-x: hidden;
-        }
-
-        .header {
-            position: fixed;
-            top: 0;
-            left: 0;
-            right: 0;
-            z-index: 100;
-            padding: 1.5rem 2rem;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        .brand-logo {
-            width: 50px;
-            height: 50px;
-            background: rgba(255, 255, 255, 0.05);
-            border-radius: 8px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            border: 1px solid rgba(255, 255, 255, 0.1);
-        }
-
-        .brand-logo img {
-            width: 35px;
-            height: 35px;
-            object-fit: contain;
-        }
-
-        .brand-placeholder {
-            color: #666;
-            font-size: 0.6rem;
-            text-align: center;
-            line-height: 1;
-            font-weight: 600;
-        }
-
-        .notify-btn {
-            background: rgba(255, 255, 255, 0.05);
-            border: 1px solid rgba(255, 255, 255, 0.15);
-            color: #ffffff;
-            padding: 0.75rem 1.5rem;
-            border-radius: 8px;
-            font-size: 0.85rem;
-            font-weight: 500;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            backdrop-filter: blur(10px);
-        }
-
-        .notify-btn:hover {
-            background: rgba(255, 255, 255, 0.1);
-            border-color: rgba(255, 255, 255, 0.3);
-        }
-
-        .main-content {
-            flex: 1;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            padding: 2rem;
-            text-align: center;
-            min-height: 100vh;
-        }
-
-        .greeting {
-            font-size: 1.1rem;
-            color: #999;
-            margin-bottom: 2rem;
-            font-weight: 400;
-        }
-
-        .logo-container {
-            margin-bottom: 3rem;
-        }
-
-        .main-logo {
-            width: 300px;
-            height: 150px;
-            margin: 0 auto 1.5rem;
-            background: linear-gradient(135deg, #1a1a1a 0%, #2a2a2a 100%);
-            border-radius: 20px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            position: relative;
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
-        }
-
-        .main-logo::before {
-            content: '';
-            position: absolute;
-            top: -2px;
-            left: -2px;
-            right: -2px;
-            bottom: -2px;
-            background: linear-gradient(45deg, rgba(255, 255, 255, 0.1), transparent, rgba(255, 255, 255, 0.05));
-            border-radius: 20px;
-            z-index: -1;
-            animation: shimmer 3s ease-in-out infinite;
-        }
-
-        @keyframes shimmer {
-            0%, 100% { opacity: 0.3; }
-            50% { opacity: 0.8; }
-        }
-
-        .logo-text {
-            font-size: 3rem;
-            font-weight: 900;
-            color: #ffffff;
-            letter-spacing: -2px;
-        }
-
-        .main-message {
-            max-width: 600px;
-            margin-bottom: 4rem;
-        }
-
-        .main-title {
-            font-size: 3.5rem;
-            font-weight: 300;
-            line-height: 1.1;
-            margin-bottom: 2rem;
-            letter-spacing: -1px;
-        }
-
-        .highlight {
-            font-weight: 600;
-        }
-
-        .model-info {
-            background: rgba(255, 255, 255, 0.03);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            padding: 1.5rem;
-            border-radius: 12px;
-            margin-bottom: 3rem;
-            max-width: 400px;
-        }
-
-        .model-label {
-            font-size: 0.75rem;
-            color: #666;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-            margin-bottom: 0.8rem;
-            font-weight: 600;
-        }
-
-        .model-name {
-            font-size: 1.3rem;
-            font-weight: 600;
-            color: #ffffff;
-            font-family: 'Monaco', 'Consolas', monospace;
-        }
-
-        .countdown {
-            position: fixed;
-            bottom: 2rem;
-            left: 50%;
-            transform: translateX(-50%);
-            display: flex;
-            gap: 1.5rem;
-            font-family: 'Monaco', 'Consolas', monospace;
-        }
-
-        .countdown-item {
-            text-align: center;
-        }
-
-        .countdown-number {
-            display: block;
-            font-size: 2rem;
-            font-weight: 700;
-            color: #ffffff;
-            line-height: 1;
-        }
-
-        .countdown-label {
-            font-size: 0.7rem;
-            color: #666;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            margin-top: 0.5rem;
-        }
-
-        .launching-text {
-            position: fixed;
-            bottom: 6rem;
-            left: 2rem;
-            font-size: 0.85rem;
-            color: #666;
-            writing-mode: vertical-rl;
-            text-orientation: mixed;
-        }
-
-        @media (max-width: 768px) {
-            .header {
-                padding: 1rem;
-            }
-            
-            .brand-logo {
-                width: 40px;
-                height: 40px;
-            }
-            
-            .brand-logo img {
-                width: 28px;
-                height: 28px;
-            }
-            
-            .notify-btn {
-                padding: 0.6rem 1rem;
-                font-size: 0.8rem;
-            }
-            
-            .main-logo {
-                width: 240px;
-                height: 120px;
-            }
-            
-            .logo-text {
-                font-size: 2.5rem;
-            }
-            
-            .main-title {
-                font-size: 2.5rem;
-            }
-            
-            .countdown {
-                gap: 1rem;
-                bottom: 1.5rem;
-            }
-            
-            .countdown-number {
-                font-size: 1.5rem;
-            }
-            
-            .launching-text {
-                display: none;
-            }
-        }
-
-        @media (max-width: 480px) {
-            .main-title {
-                font-size: 2rem;
-            }
-            
-            .countdown {
-                gap: 0.8rem;
-            }
-            
-            .countdown-number {
-                font-size: 1.2rem;
-            }
-        }
-    </style>
-</head>
-<body>
-    <header class="header">
-        <div class="brand-logo">
-            <img src="/Inside_logo.ico" alt="Inside Logo">
-        </div>
-    </header>
-
-    <main class="main-content">
-        <p class="greeting">Welcome to INNEDIT.</p>
-        
-        <div class="logo-container">
-            <div class="main-logo">
-                <img src="/innedit_logo.webp" alt="INNEDIT Logo" style="width: 80%; height: auto;">
+<Layout title="INNEDIT - ANYMORE AND INNEDIT">
+    <div class="product-page anymoreandinnedit">
+        <BackgroundSection>
+            <div class="page-content">
+                <TitleLogo subtitle="ANYMORE AND INNEDIT" />
+                <div class="product-container">
+                    <ProductShowcase
+                        productImage="/ANYMOREANDINNEDIT.webp"
+                        productAlt="Gorra Anymore and Innedit"
+                    />
+                </div>
+                <div class="product-text animate-fade-in">ESTE PRODUCTO ES ORIGINAL</div>
+                <div class="social-icons">
+                    <a href="https://inneditclub.com/password" class="social-icon animate-bounce">
+                        <img src="/SITIO_WEB.webp" alt="Website" />
+                    </a>
+                    <a href="https://www.tiktok.com/@inneditmx" class="social-icon animate-bounce">
+                        <img src="/tiktok.webp" alt="TikTok" />
+                    </a>
+                    <a href="https://www.instagram.com/innedit.mx/" class="social-icon animate-bounce">
+                        <img src="/INSTA.webp" alt="Instagram" />
+                    </a>
+                </div>
             </div>
-        </div>
-
-        <div class="main-message">
-            <h1 class="main-title">
-                Under maintenance, <span class="highlight">we're working on it</span>
-            </h1>
-        </div>
-
-        <div class="model-info">
-            <div class="model-label">Model</div>
-            <div class="model-name">anymoreandinnedit</div>
-        </div>
-    </main>
-
-    
-</body>
-</html>
+        </BackgroundSection>
+    </div>
+</Layout>
