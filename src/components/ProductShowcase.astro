@@ -6,14 +6,14 @@ export interface Props {
     productAlt?: string;
 }
 
-const { productImage = "UTOPIAGORRA.webp", productAlt = "Gorra Utopia" } =
+const { productImage = "Gorra.webp", productAlt = "Gorra" } =
     Astro.props;
 ---
 
 <div class="product-showcase">
     <div class="image-container">
         <img src={productImage} alt={productAlt} class="product-image" />
-        <img src="/VERIFICADO.webp" alt="Verificado" class="verified-badge" />
+        <img src="/logos/verificado.webp" alt="Verificado" class="verified-badge" />
     </div>
 </div>
 

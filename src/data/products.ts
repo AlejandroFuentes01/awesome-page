@@ -13,8 +13,8 @@ export const products: Product[] = [
         slug: "flvwer",
         title: "INNEDIT - FLVWER",
         subtitle: "FLVWER",
-        image: "/FLVWER.webp",
-        video: "/compress-INNEDIT-VIDEO-1-V2.mp4",
+        image: "/muratravis/FLVWER.webp",
+        video: "/muratravis/compress-INNEDIT-VIDEO-1-V2.mp4",
         alt: "Gorra FLVWER",
         pageClass: "flvwer"
     },
@@ -22,8 +22,8 @@ export const products: Product[] = [
         slug: "muratravis",
         title: "INNEDIT - MURATRAVIS UTOPIA",
         subtitle: "MURATRAVIS UTOPIA",
-        image: "/UTOPIA.webp",
-        video: "/compress-INNEDIT-VIDEO-2-V2.mp4",
+        image: "/muratravis/UTOPIA.webp",
+        video: "/muratravis/compress-INNEDIT-VIDEO-2-V2.mp4",
         alt: "Gorra Utopia",
         pageClass: "muratravis"
     },
@@ -31,8 +31,8 @@ export const products: Product[] = [
         slug: "crystalblack",
         title: "INNEDIT - CRYSTAL BLACK",
         subtitle: "CRYSTAL BLACK",
-        image: "/CRYSTALBLACK.webp",
-        video: "/compress-INNEDIT-VIDEO-3-V2.mp4",
+        image: "/muratravis/CRYSTALBLACK.webp",
+        video: "/muratravis/compress-INNEDIT-VIDEO-3-V2.mp4",
         alt: "Gorra Crystal Black",
         pageClass: "crystalblack"
     },
@@ -40,8 +40,8 @@ export const products: Product[] = [
         slug: "anymoreandinnedit",
         title: "INNEDIT - ANYMORE AND INNEDIT",
         subtitle: "ANYMORE AND INNEDIT",
-        image: "/ANYMOREANDINNEDIT.webp",
-        video: "/compress-INNEDIT-VIDEO-4-V2.mp4",
+        image: "/inneditxanymore/ANYMOREANDINNEDIT.webp",
+        video: "/inneditxanymore/compress-INNEDIT-VIDEO-4-V2.mp4",
         alt: "Gorra Anymore and Innedit",
         pageClass: "anymoreandinnedit"
     },
@@ -49,8 +49,8 @@ export const products: Product[] = [
         slug: "lamiribrucewayne",
         title: "INNEDIT - LAMIRI BRUCE WAYNE",
         subtitle: "LAMIRI BRUCE WAYNE",
-        image: "/LAMIRIBRUCEWAYNE.webp",
-        video: "/compress-INNEDIT-VIDEO-5-V2.mp4",
+        image: "/inneditxanymore/LAMIRIBRUCEWAYNE.webp",
+        video: "/inneditxanymore/compress-INNEDIT-VIDEO-5-V2.mp4",
         alt: "Gorra Lamiri Bruce Wayne",
         pageClass: "lamiribrucewayne"
     },
@@ -58,8 +58,8 @@ export const products: Product[] = [
         slug: "muratraviselectric",
         title: "INNEDIT - MURATRAVIS ELECTRIC",
         subtitle: "MURATRAVIS ELECTRIC",
-        image: "/MURATRAVISELECTRIC.webp",
-        video: "/compress-INNEDIT-VIDEO-6-V2.mp4",
+        image: "/inneditxanymore/MURATRAVISELECTRIC.webp",
+        video: "/inneditxanymore/compress-INNEDIT-VIDEO-6-V2.mp4",
         alt: "Gorra Muratravis Electric",
         pageClass: "muratraviselectric"
     }
