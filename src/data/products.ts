@@ -3,7 +3,7 @@ export interface Product {
     title: string;
     subtitle: string;
     image: string;
-    video: string;
+    video?: string;
     alt: string;
     pageClass: string;
 }
@@ -40,8 +40,8 @@ export const products: Product[] = [
         slug: "anymoreandinnedit",
         title: "INNEDIT - ANYMORE AND INNEDIT",
         subtitle: "ANYMORE AND INNEDIT",
-        image: "/inneditxanymore/ANYMOREANDINNEDIT.webp",
-        video: "/inneditxanymore/compress-INNEDIT-VIDEO-4-V2.mp4",
+        image: "/anymore-x-innedit/ANYMOREANDINNEDIT.webp",
+        video: "/anymore-x-innedit/compress-INNEDIT-VIDEO-4-V2.mp4",
         alt: "Gorra Anymore and Innedit",
         pageClass: "anymoreandinnedit"
     },
@@ -49,8 +49,8 @@ export const products: Product[] = [
         slug: "lamiribrucewayne",
         title: "INNEDIT - LAMIRI BRUCE WAYNE",
         subtitle: "LAMIRI BRUCE WAYNE",
-        image: "/inneditxanymore/LAMIRIBRUCEWAYNE.webp",
-        video: "/inneditxanymore/compress-INNEDIT-VIDEO-5-V2.mp4",
+        image: "/anymore-x-innedit/LAMIRIBRUCEWAYNE.webp",
+        video: "/anymore-x-innedit/compress-INNEDIT-VIDEO-5-V2.mp4",
         alt: "Gorra Lamiri Bruce Wayne",
         pageClass: "lamiribrucewayne"
     },
@@ -58,10 +58,34 @@ export const products: Product[] = [
         slug: "muratraviselectric",
         title: "INNEDIT - MURATRAVIS ELECTRIC",
         subtitle: "MURATRAVIS ELECTRIC",
-        image: "/inneditxanymore/MURATRAVISELECTRIC.webp",
-        video: "/inneditxanymore/compress-INNEDIT-VIDEO-6-V2.mp4",
+        image: "/anymore-x-innedit/MURATRAVISELECTRIC.webp",
+        video: "/anymore-x-innedit/compress-INNEDIT-VIDEO-6-V2.mp4",
         alt: "Gorra Muratravis Electric",
         pageClass: "muratraviselectric"
+    },
+    {
+        slug: "goldenallstar",
+        title: "INNEDIT - GOLDEN ALLSTAR",
+        subtitle: "GOLDEN ALLSTAR",
+        image: "/cactus-city/GOLDENALLSTAR.webp",
+        alt: "Gorra Golden Allstar",
+        pageClass: "goldenallstar"
+    },
+    {
+        slug: "incactus",
+        title: "INNEDIT - IN-CACTUS",
+        subtitle: "IN-CACTUS",
+        image: "/cactus-city/INCACTUS.webp",
+        alt: "Gorra In-Cactus",
+        pageClass: "in-cactus"
+    },
+    {
+        slug: "inneditghost",
+        title: "INNEDIT - INNEDIT GHOST",
+        subtitle: "INNEDIT GHOST",
+        image: "/cactus-city/INNEDITGHOST.webp",
+        alt: "Gorra Innedit Ghost",
+        pageClass: "inneditghost"
     }
 ];
 
