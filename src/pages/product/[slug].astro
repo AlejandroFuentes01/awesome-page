@@ -1,0 +1,41 @@
+---
+import ProductBackground from "@components/ProductBackground.astro";
+import ProductShowcase from "@components/ProductShowcase.astro";
+import SocialIcons from "@components/SocialIcons.astro";
+import TitleLogo from "@components/TitleLogo.astro";
+import { products, type Product } from "@data/products";
+import Layout from "@layouts/Layout.astro";
+import "@styles/common.css";
+import "@styles/product-pages.css";
+
+export function getStaticPaths() {
+    return products.map((product) => ({
+        params: { slug: product.slug },
+        props: { product },
+    }));
+}
+
+interface Props {
+    product: Product;
+}
+
+const { product } = Astro.props;
+const { title, subtitle, image, video, alt, pageClass } = product;
+---
+
+<Layout title={title}>
+    <div class={`product-page ${pageClass}`}>
+        <ProductBackground videoSrc={video} pageClass={pageClass}>
+            <div class="page-content">
+                <TitleLogo subtitle={subtitle} />
+                <div class="product-container">
+                    <ProductShowcase productImage={image} productAlt={alt} />
+                </div>
+                <div class="product-text animate-fade-in">
+                    ESTE PRODUCTO ES ORIGINAL
+                </div>
+                <SocialIcons />
+            </div>
+        </ProductBackground>
+    </div>
+</Layout>

@@ -1,0 +1,100 @@
+---
+
+export interface Props {
+    websiteUrl?: string;
+    tiktokUrl?: string;
+    instagramUrl?: string;
+}
+
+const {
+    websiteUrl = "https://inneditclub.com/password",
+    tiktokUrl = "https://www.tiktok.com/@inneditmx",
+    instagramUrl = "https://www.instagram.com/innedit.mx/"
+} = Astro.props;
+---
+
+<div class="social-icons">
+    <a href={websiteUrl} class="social-icon animate-bounce" target="_blank" rel="noopener noreferrer">
+        <img src="/SITIO_WEB.webp" alt="Website" loading="lazy" />
+    </a>
+    <a href={tiktokUrl} class="social-icon animate-bounce" target="_blank" rel="noopener noreferrer">
+        <img src="/tiktok.webp" alt="TikTok" loading="lazy" />
+    </a>
+    <a href={instagramUrl} class="social-icon animate-bounce" target="_blank" rel="noopener noreferrer">
+        <img src="/INSTA.webp" alt="Instagram" loading="lazy" />
+    </a>
+</div>
+
+<style>
+    .social-icons {
+        display: flex;
+        gap: 2rem;
+        margin-top: 2rem;
+        margin-bottom: 1.5rem;
+        width: 100%;
+        justify-content: center;
+        align-items: center;
+        position: relative;
+        z-index: 10;
+    }
+
+    .social-icon {
+        opacity: 0;
+        transform: translateY(20px);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .social-icon img {
+        width: 70px;
+        height: 70px;
+        transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    .animate-bounce {
+        animation: bounceIn 0.8s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+    }
+
+    .social-icons .social-icon:nth-child(1) {
+        animation-delay: 1.8s;
+    }
+
+    .social-icons .social-icon:nth-child(2) {
+        animation-delay: 2s;
+    }
+
+    .social-icons .social-icon:nth-child(3) {
+        animation-delay: 2.2s;
+    }
+
+    .social-icon:hover img {
+        transform: scale(1.15) translateY(-5px);
+        filter: brightness(1.2);
+    }
+
+    @keyframes bounceIn {
+        0% {
+            opacity: 0;
+            transform: translateY(20px);
+        }
+        50% {
+            transform: translateY(-10px);
+        }
+        100% {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+
+    @media (max-width: 767px) {
+        .social-icon img {
+            width: 60px;
+            height: 60px;
+        }
+
+        .social-icons {
+            gap: 1.5rem;
+        }
+    }
+</style>
