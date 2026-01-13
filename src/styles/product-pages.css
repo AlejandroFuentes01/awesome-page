@@ -282,3 +282,132 @@
         display: none !important;
     }
 }
+
+/* ========================================= */
+/* ESTILOS PARA PÁGINAS SIN VIDEO EN DESKTOP */
+/* ========================================= */
+@media (min-width: 768px) {
+    /* Aumentar tamaño de imagen solo en páginas sin video */
+    .product-page .bg-section.no-video .product-container .product-image,
+    .product-page:has(.no-video) .product-container .product-image {
+        max-width: 500px; /* Ajusta este valor a tu gusto */
+    }
+}
+
+/* ========================================= */
+/* ESTILOS PARA PÁGINAS SIN VIDEO EN MÓVIL  */
+/* Mantienen GIF de fondo y producto responsive */
+/* ========================================= */
+@media (max-width: 767px) {
+    /* Para páginas sin video: mostrar el GIF de fondo */
+    .product-page .bg-section.no-video .bg-grid {
+        display: block !important;
+    }
+    
+    .product-page .bg-section.no-video .bg-grid .cell-1 {
+        display: block !important;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        opacity: 1;
+        background-size: cover;
+        background-position: center;
+    }
+    
+    /* Para páginas sin video: mostrar el producto */
+    .product-page .bg-section.no-video .product-container,
+    .product-page:has(.no-video) .product-container {
+        display: flex !important;
+        justify-content: center;
+        align-items: center;
+        margin: 0 auto;
+        flex: 1;
+    }
+    
+    /* Ajustar tamaño del producto en móvil cuando no hay video - IMAGEN MÁS GRANDE */
+    .product-page .bg-section.no-video .product-container .product-image,
+    .product-page:has(.no-video) .product-container .product-image { /* Usa porcentaje del ancho de pantalla para ser responsive */
+        width: 100%;
+        height: auto;
+    }
+    
+    .product-page .bg-section.no-video .product-container .verified-badge,
+    .product-page:has(.no-video) .product-container .verified-badge {
+        margin-right: 40px;
+        width: 22vw;
+        max-width: 90px;
+    }
+    
+    /* Ajustar layout del contenido para páginas sin video - SIN SCROLL */
+    .product-page .bg-section.no-video .page-content,
+    .product-page:has(.no-video) .page-content {
+        display: flex !important;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: center;
+        min-height: 100vh;
+        max-height: 100vh;
+        height: 100vh;
+        overflow: hidden;
+        padding: 0;
+        gap: 0;
+    }
+    
+    /* TitleLogo un poco más abajo */
+    .product-page .bg-section.no-video .title-logo,
+    .product-page:has(.no-video) .title-logo {
+        margin-top: 40px;
+        margin-bottom: 0;
+        flex-shrink: 0;
+    }
+    
+    /* Texto "ESTE PRODUCTO ES ORIGINAL" posicionado más abajo */
+    .product-page .bg-section.no-video .product-text,
+    .product-page:has(.no-video) .product-text {
+        position: relative;
+        left: auto;
+        transform: none;
+        margin: 0 auto;
+        flex-shrink: 0;
+    }
+    
+    /* Ajustar las redes sociales para páginas sin video */
+    .product-page .bg-section.no-video .social-icons,
+    .product-page:has(.no-video) .social-icons {
+        position: relative;
+        margin-top: 0;
+        margin-bottom: 80px;
+        padding-bottom: env(safe-area-inset-bottom, 15px);
+        flex-shrink: 0;
+    }
+}
+
+/* Ajustes para pantallas muy pequeñas sin video */
+@media (max-width: 359px) {
+
+    .product-page .bg-section.no-video .product-container .verified-badge,
+    .product-page:has(.no-video) .product-container .verified-badge {
+        width: 20vw;
+        max-width: 70px;
+    }
+    
+    .product-page .bg-section.no-video .title-logo,
+    .product-page:has(.no-video) .title-logo {
+        margin-top: 25px;
+    }
+}
+
+/* Para dispositivos muy bajos sin video (iPhone SE y similares) */
+@media (max-width: 767px) and (max-height: 667px) {
+    .product-page .bg-section.no-video .title-logo,
+    .product-page:has(.no-video) .title-logo {
+        margin-top: 20px;
+    }
+    
+    .product-page .bg-section.no-video .social-icons,
+    .product-page:has(.no-video) .social-icons {
+        margin-bottom: 15px;
+    }
+}
