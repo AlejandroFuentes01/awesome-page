@@ -64,7 +64,7 @@ export const products: Product[] = [
         pageClass: "muratraviselectric"
     },
     {
-        slug: "goldenallstar",
+        slug: "inneditallstar",
         title: "INNEDIT - GOLDEN ALLSTAR",
         subtitle: "GOLDEN ALLSTAR",
         image: "/cactus-city/GOLDENALLSTAR.webp",
