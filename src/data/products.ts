@@ -68,7 +68,7 @@ export const products: Product[] = [
         title: "INNEDIT - GOLDEN ALLSTAR",
         subtitle: "GOLDEN ALLSTAR",
         image: "/cactus-city/GOLDENALLSTAR.webp",
-        video:"/cactus-city/compress-INNEDIT-VIDEO-7-V2.mp4",
+        video:"/cactus-city/compress-INNEDIT-VIDEO-7-V2..mp4",
         alt: "Gorra Golden Allstar",
         pageClass: "goldenallstar"
     },
@@ -77,7 +77,7 @@ export const products: Product[] = [
         title: "INNEDIT - IN-CACTUS",
         subtitle: "IN-CACTUS",
         image: "/cactus-city/INCACTUS.webp",
-        video:"/cactus-city/compress-INNEDIT-VIDEO-8-V2..mp4",
+        video:"/cactus-city/compress-INNEDIT-VIDEO-8-V2.mp4",
         alt: "Gorra In-Cactus",
         pageClass: "in-cactus"
     },
